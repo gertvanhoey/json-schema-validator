@@ -31,6 +31,9 @@ target_include_directories(json-schema-validator
 target_compile_features(json-schema-validator
     PUBLIC
         cxx_range_for) # for C++11 - flags
+
+install(TARGETS json-schema-validator RUNTIME DESTINATION bin)
+
 # Enable more compiler warnings, except when using Visual Studio compiler
 if(NOT MSVC)
     target_compile_options(json-schema-validator
